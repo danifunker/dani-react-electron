@@ -9,7 +9,7 @@ interface ButtonLinkProps {
 export default function ButtonLink({ to, children, id }: ButtonLinkProps) {
   return (
     <Link to={to} id={id}>
-      <button>{children}</button>
+      <button type="button">{children}</button>
     </Link>
   );
 }
