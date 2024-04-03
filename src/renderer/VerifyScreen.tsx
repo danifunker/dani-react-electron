@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import ButtonLink from './ButtonLink';
 
 export default function VerifyScreen() {
   return (
@@ -9,9 +9,9 @@ export default function VerifyScreen() {
         <p>Nothing here</p>
       </ul>
       <p>
-        <button type="button" id="backbtn">
-          <Link to="/"> Back </Link>
-        </button>
+        <ButtonLink to="/" id="backbtn">
+          Back
+        </ButtonLink>
       </p>
     </div>
   );

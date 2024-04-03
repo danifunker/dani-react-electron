@@ -1,8 +1,8 @@
-import { MemoryRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import OrderScreen from './OrderScreen';
 import VerifyScreen from './VerifyScreen';
-
+import ButtonLink from './ButtonLink';
 // const { ipcRenderer, contextBridge } = require('electron');
 
 function StartScreen() {
@@ -11,15 +11,15 @@ function StartScreen() {
       <section>
         <h1>Dani React App</h1>
         <div className="StartScreen">
-          <button type="button" id="orderbtn">
-            <Link to="/order">Order</Link>
-          </button>
-          <button type="button" id="verifybtn">
-            <Link to="/verify">Verify</Link>
-          </button>
-          <button type="button" id="exitbtn">
+          <ButtonLink to="/order" id="orderbtn">
+            Order
+          </ButtonLink>
+          <ButtonLink to="/verify" id="verifybtn">
+            Verify
+          </ButtonLink>
+          <ButtonLink to="/" id="exitbtn">
             Exit
-          </button>
+          </ButtonLink>
         </div>
       </section>
     </main>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import ButtonLink from './ButtonLink';
 
 export default function OrderScreen() {
   return (
@@ -10,9 +10,9 @@ export default function OrderScreen() {
         <input type="button" id="submitOrder" value="Submit Order" />
       </p>
       <p>
-        <button type="button" id="backbtn">
-          <Link to="/"> Back </Link>
-        </button>
+        <ButtonLink to="/" id="backbtn">
+          Back
+        </ButtonLink>
       </p>
     </div>
   );
