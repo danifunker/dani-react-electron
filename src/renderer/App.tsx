@@ -1,37 +1,28 @@
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
+import { MemoryRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
+import OrderScreen from './OrderScreen';
+import VerifyScreen from './VerifyScreen';
 
 // const { ipcRenderer, contextBridge } = require('electron');
 
-function Hello() {
+function StartScreen() {
   return (
-    <div>
-      <h1>Dani React App</h1>
-      <div className="Hello">
-        <button type="button" id="orderbtn">
-          Order
-        </button>
-        <button type="button" id="verifybtn">
-          Verify
-        </button>
-        <button type="button" id="exitbtn">
-          Exit
-        </button>
-      </div>
-    </div>
-  );
-}
-
-export function Order() {
-  return (
-    <div>
-      <h1>Order Screen</h1>
-      <p>
-        Number of Widgets Ordering:
-        <input type="text" id="orderinput" maxLength={10} />
-        <input type="button" id="submitOrder" value="Submit Order" />
-      </p>
-    </div>
+    <main>
+      <section>
+        <h1>Dani React App</h1>
+        <div className="StartScreen">
+          <button type="button" id="orderbtn">
+            <Link to="/order">Order</Link>
+          </button>
+          <button type="button" id="verifybtn">
+            <Link to="/verify">Verify</Link>
+          </button>
+          <button type="button" id="exitbtn">
+            Exit
+          </button>
+        </div>
+      </section>
+    </main>
   );
 }
 
@@ -39,7 +30,9 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Hello />} />
+        <Route path="/" element={<StartScreen />} />
+        <Route path="/order" element={<OrderScreen />} />
+        <Route path="/verify" element={<VerifyScreen />} />
       </Routes>
     </Router>
   );
