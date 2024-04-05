@@ -1,4 +1,4 @@
-export interface WidgetOrder {
+interface WidgetOrder {
   id: string;
-  numberOfWidgets: number;
+  quantity: number;
 }
