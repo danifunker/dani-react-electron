@@ -1,6 +1,7 @@
 import { MemoryRouter as Router, Routes, Route, UNSAFE_useRouteId } from 'react-router-dom';
 import React from 'react';
 import { useState } from 'react';
+import crypto from 'crypto';
 import './App.css';
 // import OrderScreen from './OrderScreen';
 // import VerifyScreen from './VerifyScreen';
@@ -40,9 +41,10 @@ export function OrderScreen() {
   };
 
   const handleCreateOrder = () => {
-    // const id = randomUUID();
-    const newWidgetOrder = { id, quantity: widgetQuantity };
-    addOrderToSystem(newWidgetOrder);
+    const id = App.orderNumber;
+    handleClick();
+    // const newWidgetOrder = { id, quantity: orderinput };
+    // addOrderToSystem(newWidgetOrder);
   };
 
   return (
@@ -55,6 +57,7 @@ export function OrderScreen() {
           type="button"
           id="submitOrder"
           value="Submit Order"
+          onClick={handleCreateOrder}
         />
       </p>
       <p>
@@ -84,15 +87,20 @@ export function VerifyScreen() {
 }
 
 export default function App() {
+  let orderNumber = 101;
   const [widgetOrderState, setWidgetOrderState] = useState<WigetOrder[]>([]);
   const handleAddOrderToSystem = (newOrder) => {
     setWidgetOrderState([widgetOrderState, newOrder]);
   };
   console.log("Logging to console...");
   console.log(widgetOrderState);
+  console.log('OrderNumber', orderNumber);
+  //orderNumber+=1;
+
   function handleClick() {
     console.log("Clicked the button!");
-    setOrderList(orderList + 1);
+    orderNumber += 1;
+    console.log('OrderNumber', orderNumber);
   }
   return (
     <Router>
