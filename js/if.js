@@ -12,5 +12,5 @@ const function1 = (a, b) => {
   return finalResult;
 };
 
-console.log("Thank you for your input, your winnings are:")
+console.log('Thank you for your input, your winnings are:');
 console.log(function1(argv[2], argv[3]));
