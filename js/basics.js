@@ -17,12 +17,19 @@ let myConst = {
   arr1: [1, 2, 3, 4, 5, 6],
   'my cool key': 'my cool value',
   fun1: () => {
-    return 'This is a function';
+    return myConst.var1.concat(' ', myConst.var2);
+  },
+  fun2: () => {
+    console.log("inside the fun2");
+    console.log(this.var1, this.var2);
   },
 };
 
 // let newVarName() = argv[2];
 // let var2 = argv[3];
+console.log(myConst.fun1());
+// console.log(myConst.fun2()); //need help with this one
+
 console.log('The number of args used in this program was '.concat(args.length));
 console.log('The are are the following:'.concat(...args.join(' ')));
 console.log(typeof myConst);
