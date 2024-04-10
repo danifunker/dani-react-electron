@@ -1,8 +1,8 @@
 class daniClass {
   constructor(name, year) {
     this.name = name;
-    const currentTime = new Date(Date.now());
-    this.age = currentTime.getFullYear() - year;
+    // const currentYear = new Date(Date.now()).getFullYear(); //don't actually need this variable
+    this.age = new Date(Date.now()).getFullYear() - year;
   }
 }
 
